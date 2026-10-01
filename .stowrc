@@ -1,0 +1,4 @@
+--dotfiles
+--target="$HOME"
+--dir="$HOME/.dotfiles"
+--verbose=1
