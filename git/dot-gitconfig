@@ -1,3 +1,27 @@
 [user]
-name = Patrick Ruppert
-email = patrick.j.ruppert@gmail.com
+    name = Patrick Ruppert
+    email = patrick.j.ruppert@gmail.com
+
+[alias]
+    ll = log --oneline --graph --decorate
+    la = ll --all
+
+[fetch]
+    prune = true
+    recurseSubmodules = on-demand
+
+[init]
+    defaultBranch = main
+
+[pull]
+    rebase = true
+    recurseSubmodules = on-demand
+
+[push]
+    autoSetupRemote = true
+
+[rebase]
+    autosquash = true
+
+[rerere]
+    enabled = true

@@ -1,0 +1,7 @@
+export PYTHONPYCACHEPREFIX="$XDG_CACHE_HOME/cpython"
+mkdir -p $PYTHONPYCACHEPREFIX
+
+export PYENV_ROOT="/home/patrick/.local/share/pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - bash)"
+eval "$(pyenv virtualenv-init -)"
