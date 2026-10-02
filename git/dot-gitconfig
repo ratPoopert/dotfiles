@@ -1,14 +1,24 @@
 [user]
     name = Patrick Ruppert
     email = patrick.j.ruppert@gmail.com
+    signingkey = ~/.ssh/id_ecdsa
 
 [alias]
     ll = log --oneline --graph --decorate
     la = ll --all
 
+[commit]
+    gpgsign = true
+
 [fetch]
     prune = true
     recurseSubmodules = on-demand
+
+[gpg]
+    format = ssh
+
+[gpg.ssh]
+    allowedSignersFile = ~/.ssh/allowed_signers
 
 [init]
     defaultBranch = main
@@ -25,3 +35,6 @@
 
 [rerere]
     enabled = true
+
+[tag]
+    gpgsign = true
