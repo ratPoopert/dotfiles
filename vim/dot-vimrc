@@ -1,0 +1,128 @@
+" Disable legacy vi compatibility
+set nocompatible
+
+" ------------------------------------------------------------------------------
+" Editing
+" ------------------------------------------------------------------------------
+set autoindent
+set backspace=indent,eol,start
+set breakindent
+set expandtab
+set linebreak
+set nowrap
+set shiftwidth=4
+set smartindent
+set smarttab
+set softtabstop=4
+set updatetime=250
+set timeoutlen=300
+
+" ------------------------------------------------------------------------------
+" Display
+" ------------------------------------------------------------------------------
+colorscheme habamax
+set colorcolumn=80
+set cursorline
+set foldenable
+set foldlevel=99
+set foldmethod=indent
+set list
+set listchars=tab:»\ ,trail:·,nbsp:␣,leadtab:\|\ ,leadmultispace:\|\ 
+set number
+set ruler
+set scrolloff=10
+set showcmd
+set showmatch
+set sidescrolloff=10
+set signcolumn=yes
+set termguicolors
+syntax enable
+
+" ------------------------------------------------------------------------------
+" Searching
+" ------------------------------------------------------------------------------
+set hlsearch
+set ignorecase
+set incsearch
+set smartcase
+
+" ------------------------------------------------------------------------------
+" Files and buffers
+" ------------------------------------------------------------------------------
+filetype plugin indent on
+set autoread
+set confirm
+set encoding=utf-8
+set fileencoding=utf-8
+set fileformats=unix,dos,mac
+set hidden
+
+" ------------------------------------------------------------------------------
+" Command line and completion
+" ------------------------------------------------------------------------------
+set history=1000
+set path=.,**
+set wildignore+=*.git,.hg,.svn
+set wildignore+=*.o,*.obj,*.class
+set wildignore+=*.pyc,__pycache__
+set wildignore+=dist,build
+set wildignore+=node_modules
+set wildmenu
+set wildmode=longest:full,full
+
+" ------------------------------------------------------------------------------
+" Splits and windows
+" ------------------------------------------------------------------------------
+set splitbelow
+set splitright
+
+" ------------------------------------------------------------------------------
+" Mouse and clipboard
+" ------------------------------------------------------------------------------
+set mouse=a
+set clipboard=unnamedplus
+
+" ------------------------------------------------------------------------------
+" Persistence
+" ------------------------------------------------------------------------------
+set nobackup
+set nowritebackup
+set noswapfile
+
+"if has ('persistent_undo')
+"    set undofile
+"endif
+
+" ------------------------------------------------------------------------------
+" Keymaps
+" ------------------------------------------------------------------------------
+let mapleader = " "
+let maplocalleader = " "
+
+nnoremap - :Explore<CR>
+nnoremap <C-l> :nohlsearch<CR><C-l>
+nnoremap N Nzzzv
+nnoremap n nzzzv
+
+vnoremap < <gv
+vnoremap > >gv
+vnoremap J :move '>+1<CR>gv=gv
+vnoremap K :move '<-2<CR>gv=gv
+
+" ------------------------------------------------------------------------------
+" File Explorer
+" ------------------------------------------------------------------------------
+" set cedit=<Esc>
+
+" ------------------------------------------------------------------------------
+" Plugins
+" ------------------------------------------------------------------------------
+if !has('nvim')
+    let s:vim_plugins = expand('~/.vim/plugins.vim')
+    if filereadable(s:vim_plugins)
+	execute 'source ' . fnameescape(s:vim_plugins)
+    endif
+endif
+
+" This goes last
+highlight Normal ctermbg=NONE guibg=NONE

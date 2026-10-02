@@ -1,0 +1,31 @@
+# Readline Init
+# https://www.gnu.org/software/bash/manual/html_node/Readline-Init-File-Syntax.html
+
+# Use vi mode for command line editing
+# Ref: https://github.com/pkrumins/bash-vi-editing-mode-cheat-sheet/blob/master/bash-vi-editing-mode-cheat-sheet.txt
+set editing-mode vi
+
+# Use vim-ish cursor on the command prompt
+# Blinking bar for insert mode
+# Box for command (normal) mode
+# Ref: https://stackoverflow.com/questions/44534678/how-to-change-cursor-shape-depending-on-vi-mode-in-bash
+set show-mode-in-prompt on
+set vi-ins-mode-string "\1\e[5 q\2"
+set vi-cmd-mode-string "\1\e[2 q\2"
+
+# Reduce delay when switching vi modes
+# Value is in milliseconds
+# Ref: https://superuser.com/questions/2252214/slight-delay-when-switching-modes-in-vim-using-tmux-or-screen/116187#1161871
+set keyseq-timeout 250
+
+# Case-insensitive tab completion
+set completion-ignore-case on
+
+# Show all completion matches at once if there is an ambiguity
+set show-all-if-ambiguous on
+
+# Colorize completion results
+set colored-stats on
+
+# Add a slash to completed directories
+set mark-directories on
