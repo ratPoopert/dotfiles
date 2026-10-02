@@ -1,5 +1,3 @@
--- vim: set foldmethod=indent foldlevel=0:
---
 -- ============================================================
 -- SECTION 1: OPTIONS
 -- ============================================================
@@ -460,3 +458,5 @@ do
 end
 
 vim.cmd.colorscheme('catppuccin')
+
+-- vim: set foldmethod=indent foldlevel=0:
