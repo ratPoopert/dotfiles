@@ -138,6 +138,7 @@ do
             )
         end,
     }
+	vim.pack.add({ "https://github.com/tpope/vim-fugitive" })
 
     vim.pack.add { 'https://github.com/folke/which-key.nvim' }
     require('which-key').setup {
