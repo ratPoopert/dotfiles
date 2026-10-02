@@ -31,3 +31,4 @@ gui:
   showRandomTip: false
   nerdFontsVersion: 3
   screenMode: full
+  timeFormat: 2006-01-02
