@@ -50,6 +50,19 @@
       "rev": "561751e839b99a4baca36b9d963166b66d2536a6",
       "src": "https://github.com/nvim-mini/mini.nvim"
     },
+    "nvim-dap": {
+      "rev": "cfa2d58f4537aca6ca83e2de1a0d9f1491121264",
+      "src": "https://github.com/mfussenegger/nvim-dap"
+    },
+    "nvim-dap-python": {
+      "rev": "1808458eba2b18f178f990e01376941a42c7f93b",
+      "src": "https://github.com/mfussenegger/nvim-dap-python"
+    },
+    "nvim-dap-view": {
+      "rev": "210b2c0e4acc08aad23fbd5a7989dd0169f716d0",
+      "src": "https://github.com/igorlfs/nvim-dap-view",
+      "version": "1.0.0 - 2.0.0"
+    },
     "nvim-lspconfig": {
       "rev": "3e8d598d3b5f8338a41699c436e5fa11d2666cf0",
       "src": "https://github.com/neovim/nvim-lspconfig"

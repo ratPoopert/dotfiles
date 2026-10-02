@@ -457,6 +457,75 @@ do
     })
 end
 
+-- ============================================================
+-- SECTION 10: DEBUGGING
+-- ============================================================
+do
+    vim.pack.add({
+        'https://github.com/mfussenegger/nvim-dap',
+        'https://github.com/mfussenegger/nvim-dap-python',
+        {
+            src = 'https://github.com/igorlfs/nvim-dap-view',
+            version = vim.version.range('1.*'),
+        },
+    })
+
+    local dap = require('dap')
+    local dap_python = require('dap-python')
+    local dap_view = require('dap-view')
+    local debugpy_adapter = vim.fn.exepath('debugpy-adapter')
+
+    if debugpy_adapter == '' then
+        error('debugpy-adapter not found. Run pipx install debugpy.')
+    end
+
+    dap_python.setup(debugpy_adapter)
+    dap_python.test_runner = 'pytest'
+
+    dap_python.resolve_python = function()
+        local project_python = vim.fn.getcwd() .. '/.venv/bin/python'
+        if vim.fn.executable(project_python) == 1 then
+            return project_python
+        end
+        return vim.fn.expand('python3')
+    end
+
+    dap_view.setup({
+        auto_toggle = true,
+    })
+
+    vim.keymap.set('n', '<leader>db', dap.toggle_breakpoint, { desc = 'DAP: Toggle breakpoint' })
+    vim.keymap.set('n', '<F5>', dap.continue, { desc = 'DAP: Start or Continue' })
+    vim.keymap.set('n', '<F4>', dap.step_over, { desc = 'DAP: Step Over' })
+    vim.keymap.set('n', '<F3>', dap.step_into, { desc = 'DAP: Step Into' })
+    vim.keymap.set('n', '<F2>', dap.step_out, { desc = 'DAP: Step Out' })
+    vim.keymap.set('n', '<F1>', dap.terminate, { desc = 'DAP: Stop' })
+    vim.keymap.set('n', '<leader><F5>', dap.run_last, { desc = 'DAP: Run Last' })
+    vim.keymap.set('n', '<leader>dv', dap_view.toggle, { desc = 'DAP: Toggle View' })
+    vim.keymap.set('n', '<leader>dh', dap_view.hover, { desc = 'DAP: Inspect value' })
+
+    table.insert(dap.configurations.python, {
+        type = 'python',
+        request = 'launch',
+        name = 'Run current file',
+        program = '${file}',
+        cwd = '${workspaceFolder}',
+        console = 'integratedTerminal',
+        justMyCode = false,
+    })
+
+    table.insert(dap.configurations.python, {
+        type = 'python',
+        request = 'launch',
+        name = 'Run pytest',
+        module = 'pytest',
+        args = { '-vv', '-s' },
+        cwd = '${workspaceFolder}',
+        console = 'integratedTerminal',
+        justMyCode = false,
+    })
+end
+
 vim.cmd.colorscheme('catppuccin')
 
 -- vim: set foldmethod=indent foldlevel=0:
