@@ -1,0 +1,8 @@
+
+com.discordapp.Discord/x86_64/stable
+md.obsidian.Obsidian/x86_64/stable
+org.freedesktop.Platform.codecs-extra/x86_64/26.08-extra
+org.freedesktop.Platform.GL.default/x86_64/26.08
+org.freedesktop.Platform.GL.default/x86_64/26.08-extra
+org.freedesktop.Platform.VAAPI.Intel/x86_64/26.08
+org.freedesktop.Platform/x86_64/26.08
