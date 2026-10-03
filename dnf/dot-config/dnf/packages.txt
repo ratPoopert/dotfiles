@@ -81,6 +81,7 @@ fedora-flathub-remote
 fedora-release-workstation
 fedora-workstation-backgrounds
 fedora-workstation-repositories
+ffmpeg
 file
 filesystem
 firefox
@@ -288,6 +289,8 @@ realtek-firmware
 ripgrep
 rootfiles
 rpm
+rpmfusion-free-release
+rpmfusion-nonfree-release
 rsync
 rygel
 samba-client

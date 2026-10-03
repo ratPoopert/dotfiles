@@ -1,0 +1,5 @@
+copr.fedorainfracloud.org/atim/starship
+copr.fedorainfracloud.org/awood/bat-extras
+copr.fedorainfracloud.org/dejan/lazygit
+copr.fedorainfracloud.org/lihaohong/yazi
+copr.fedorainfracloud.org/phracek/PyCharm
