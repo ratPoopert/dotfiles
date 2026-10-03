@@ -1,23 +1,3 @@
-sudo dnf install -y -q \
-    bzip2 \
-    bzip2-devel \
-    gcc \
-    gdbm-libs \
-    libffi-devel \
-    libnsl2 \
-    libuuid-devel \
-    make \
-    openssl-devel \
-    patch \
-    python3 \
-    python3-devel \
-    readline-devel \
-    sqlite \
-    sqlite-devel \
-    tk8-devel \
-    xz-devel \
-    zlib-devel
-
 export PYTHONPYCACHEPREFIX="$XDG_CACHE_HOME/cpython"
 mkdir -p $PYTHONPYCACHEPREFIX
 

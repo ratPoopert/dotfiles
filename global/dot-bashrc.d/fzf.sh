@@ -1,4 +1,4 @@
-source /usr/share/fzf/shell/key-bindings.bash
+eval "$(fzf --bash)"
 
 # https://github.com/catppuccin/fzf
 export FZF_DEFAULT_OPTS=" \
