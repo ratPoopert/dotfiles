@@ -305,6 +305,7 @@ shim-x64
 showtime
 simple-scan
 snapshot
+solaar
 sos
 speech-dispatcher
 spice-vdagent
